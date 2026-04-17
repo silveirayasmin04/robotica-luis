@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aulas de Robótica – Luis da Robótica</title>
+  <link rel="icon" type="image/png" href="logotipo.png">
+  <link rel="icon" type="image/png" href="logotipo.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+
+    /* HERO */
+    .aluno-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px 60px 80px;
+      background:
+        linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(10,15,28,0.92) 100%),
+        url('fundoalunos.png') center/cover no-repeat;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(14,165,233,0.18);
+      border: 1px solid rgba(14,165,233,0.35);
+      color: #7DD3F5;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+      width: fit-content;
+    }
+
+    .aluno-hero h1 {
+      font-size: 50px;
+      font-weight: 800;
+      max-width: 680px;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+
+    .aluno-hero h1 span { color: #0EA5E9; }
+
+    .aluno-hero .subtitulo {
+      color: rgba(255,255,255,0.75);
+      font-size: 18px;
+      max-width: 540px;
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+
+    .btn-matricula {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #0b77a8;
+      color: white;
+      text-decoration: none;
+      padding: 15px 32px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+      width: fit-content;
+    }
+
+    .btn-matricula:hover {
+      background: #38BDF8;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(14,165,233,0.35);
+    }
+
+    /* SOBRE AS AULAS */
+    .sobre-aulas {
+      background: #03051a;
+      padding: 90px 60px;
+      display: flex;
+      gap: 70px;
+      align-items: flex-start;
+    }
+
+    .sobre-aulas-texto { flex: 1; }
+
+    .section-label {
+      display: inline-block;
+      background: rgba(14,165,233,0.18);
+      border: 1px solid rgba(14,165,233,0.35);
+      color: #7DD3F5;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .sobre-aulas-texto h2 {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .sobre-aulas-texto h2 span { color: #0EA5E9; }
+
+    .sobre-aulas-texto p {
+      color: rgba(255,255,255,0.7);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .foto-placeholder-lg {
+      flex-shrink: 0;
+      width: 380px;
+      height: 460px;
+      border-radius: 16px;
+      border: 2px dashed rgba(14,165,233,0.25);
+      background: rgba(10,30,78,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      color: rgba(14,165,233,0.4);
+    }
+
+    .foto-placeholder-lg i { font-size: 40px; }
+    .foto-placeholder-lg span {
+      font-size: 13px;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* INFORMAÇÕES IMPORTANTES */
+    .info-section {
+      background: #000000;
+      padding: 80px 60px;
+    }
+
+    .info-section h2 {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 36px;
+      line-height: 1.2;
+    }
+
+    .info-section h2 span { color: #0EA5E9; }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 0;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: linear-gradient(145deg, #0d0d1a, rgba(10,30,78,0.2));
+      border: 1px solid rgba(14,165,233,0.12);
+      border-radius: 14px;
+      padding: 22px 20px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .info-item:hover {
+      border-color: rgba(14,165,233,0.35);
+      box-shadow: 0 6px 24px rgba(14,165,233,0.08);
+    }
+
+    .info-item .info-emoji {
+      font-size: 22px;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .info-item p {
+      color: rgba(255,255,255,0.78);
+      font-size: 15px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* BENEFÍCIOS */
+    .beneficios-section {
+      background: #03051a;
+      padding: 90px 60px;
+    }
+
+    .beneficios-section h2 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 48px;
+      line-height: 1.2;
+    }
+
+    .beneficios-section h2 span { color: #0EA5E9; }
+
+    .beneficios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .beneficio-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: linear-gradient(145deg, #0d0d1a, rgba(10,30,78,0.2));
+      border: 1px solid rgba(14,165,233,0.12);
+      border-radius: 12px;
+      padding: 20px 22px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .beneficio-item:hover {
+      border-color: rgba(14,165,233,0.35);
+      box-shadow: 0 6px 24px rgba(14,165,233,0.08);
+    }
+
+    .beneficio-item i {
+      color: #0EA5E9;
+      font-size: 15px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .beneficio-item p {
+      color: rgba(255,255,255,0.78);
+      font-size: 15px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* GALERIA */
+    .galeria-section {
+      background: #000000;
+      padding: 90px 60px;
+    }
+
+    .galeria-section h2 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .galeria-section h2 span { color: #0EA5E9; }
+
+    .galeria-section .galeria-sub {
+      color: rgba(255,255,255,0.55);
+      font-size: 15px;
+      margin-bottom: 40px;
+    }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .galeria-item {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(14,165,233,0.12);
+      transition: border-color 0.3s, transform 0.3s;
+      aspect-ratio: 4/3;
+    }
+
+    .galeria-item:hover {
+      border-color: rgba(14,165,233,0.4);
+      transform: scale(1.02);
+    }
+
+    .galeria-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .galeria-placeholder {
+      width: 100%;
+      height: 100%;
+      background: rgba(10,30,78,0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: rgba(14,165,233,0.35);
+      min-height: 200px;
+    }
+
+    .galeria-placeholder i { font-size: 28px; }
+    .galeria-placeholder span {
+      font-size: 12px;
+      color: rgba(255,255,255,0.2);
+    }
+
+    /* CTA FINAL */
+    .cta-final {
+      background: #03051a;
+      padding: 90px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .cta-final h2 {
+      font-size: 34px;
+      font-weight: 800;
+      max-width: 580px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .cta-final h2 span { color: #0EA5E9; }
+
+    .cta-final p {
+      color: rgba(255,255,255,0.6);
+      font-size: 16px;
+      max-width: 500px;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #050816;
+      padding: 30px 20px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-bottom {
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      color: rgba(255,255,255,0.35);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .footer-bottom .dev-credit a {
+      color: rgba(14,165,233,0.85);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.25s;
+    }
+
+    .footer-bottom .dev-credit a:hover {
+      color: #38BDF8;
+      text-decoration: underline;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 900px) {
+      .sobre-aulas {
+        flex-direction: column;
+        padding: 60px 24px;
+        gap: 40px;
+      }
+      .foto-placeholder-lg {
+        width: 100%;
+        height: 260px;
+      }
+      .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .aluno-hero { padding: 110px 24px 60px; }
+      .aluno-hero h1 { font-size: 30px; }
+      .aluno-hero .subtitulo { font-size: 15px; }
+      .info-section { padding: 60px 24px; }
+      .beneficios-section { padding: 60px 24px; }
+      .galeria-section { padding: 60px 24px; }
+      .galeria-grid { grid-template-columns: 1fr; }
+      .cta-final { padding: 60px 24px; }
+      .cta-final h2 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <img src="logotipo.png" alt="Logo Luis da Robótica">
+  </div>
+  <nav id="menu">
+    <a href="index.html">Home</a>
+    <a href="sobre.html">Sobre Mim</a>
+    <a href="capacitacoes.html">Capacitações</a>
+    <a href="mentes.html">Mentes Makers</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
+</header>
+
+<!-- HERO -->
+<section class="aluno-hero">
+  <span class="tag">Arduino Maker</span>
+  <h1>Aulas de Robótica para <span>Alunos</span></h1>
+  <p class="subtitulo">
+    Aprender fazendo — projetos práticos que desenvolvem lógica, criatividade e autonomia.
+  </p>
+  <a href="contato.html" class="btn-matricula">
+    <i class="fas fa-user-plus"></i>
+    Quero matricular meu filho(a)
+  </a>
+</section>
+
+<!-- SOBRE AS AULAS -->
+<section class="sobre-aulas">
+  <div class="sobre-aulas-texto">
+    <span class="section-label">Como funciona</span>
+    <h2>Aprendizado que acontece <span>na prática</span></h2>
+    <p>
+      Aqui o aprendizado acontece na prática. Em cada aula, os alunos desenvolvem projetos com Arduino e materiais makers, explorando tecnologia de forma criativa, acessível e envolvente.
+    </p>
+    <p>
+      Mais do que montar robôs, eles aprendem a pensar, testar, resolver problemas e transformar ideias em projetos reais. As aulas são estruturadas com desafios dinâmicos que estimulam o raciocínio, a autonomia e o protagonismo dos alunos.
+    </p>
+    <p>
+      Utilizando o <strong style="color: #7DD3F5;">Método dos 3E's</strong> (Explorar, Executar e Evoluir), os alunos passam por um processo contínuo de aprendizagem, onde cada projeto contribui para o desenvolvimento de habilidades essenciais para o futuro.
+    </p>
+  </div>
+
+  <!-- Substitua por <img src="foto-aula.jpg" ...> quando tiver a foto -->
+  <div class="foto-placeholder-lg">
+    <i class="fas fa-image"></i>
+    <span>Adicionar foto das aulas</span>
+  </div>
+</section>
+
+<!-- INFORMAÇÕES IMPORTANTES -->
+<section class="info-section">
+  <span class="section-label">Detalhes</span>
+  <h2>Informações <span>importantes</span></h2>
+
+  <div class="info-grid">
+    <div class="info-item">
+      <span class="info-emoji">📌</span>
+      <p>Aulas presenciais em <strong>Canoas/RS</strong></p>
+    </div>
+    <div class="info-item">
+      <span class="info-emoji">📅</span>
+      <p><strong>45 aulas</strong> ao longo de 1 ano</p>
+    </div>
+    <div class="info-item">
+      <span class="info-emoji">⏱</span>
+      <p>1 encontro por semana com <strong>2h de duração</strong></p>
+    </div>
+    <div class="info-item">
+      <span class="info-emoji">🚫</span>
+      <p><strong>Sem taxa</strong> de matrícula</p>
+    </div>
+    <div class="info-item">
+      <span class="info-emoji">🧰</span>
+      <p><strong>Sem custo</strong> com materiais</p>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="beneficios-section">
+  <span class="section-label">O que seu filho vai desenvolver</span>
+  <h2>Muito mais do que <span>tecnologia</span></h2>
+
+  <div class="beneficios-grid">
+    <div class="beneficio-item"><i class="fas fa-tools"></i><p>Cada aula é um novo projeto prático</p></div>
+    <div class="beneficio-item"><i class="fas fa-microchip"></i><p>Uso de Arduino e cultura maker</p></div>
+    <div class="beneficio-item"><i class="fas fa-brain"></i><p>Desenvolvimento de lógica e raciocínio</p></div>
+    <div class="beneficio-item"><i class="fas fa-lightbulb"></i><p>Estímulo à criatividade e autonomia</p></div>
+    <div class="beneficio-item"><i class="fas fa-hands"></i><p>Aprendizado ativo — mão na massa</p></div>
+    <div class="beneficio-item"><i class="fas fa-users"></i><p>Ambiente colaborativo e motivador</p></div>
+    <div class="beneficio-item"><i class="fas fa-certificate"></i><p>Certificado ao final do curso</p></div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria-section">
+  <span class="section-label">Nossas aulas</span>
+  <h2>Conheça mais sobre <span>nossas aulas</span></h2>
+  <p class="galeria-sub">Momentos reais de aprendizado, criação e descoberta.</p>
+
+  <div class="galeria-grid">
+    <div class="galeria-item">
+      <!-- <img src="aula1.jpg" alt=""> -->
+      <div class="galeria-placeholder"><i class="fas fa-image"></i><span>aula1.jpg</span></div>
+    </div>
+    <div class="galeria-item">
+      <div class="galeria-placeholder"><i class="fas fa-image"></i><span>aula2.jpg</span></div>
+    </div>
+    <div class="galeria-item">
+      <div class="galeria-placeholder"><i class="fas fa-image"></i><span>aula3.jpg</span></div>
+    </div>
+    <div class="galeria-item">
+      <div class="galeria-placeholder"><i class="fas fa-image"></i><span>aula4.jpg</span></div>
+    </div>
+    <div class="galeria-item">
+      <div class="galeria-placeholder"><i class="fas fa-image"></i><span>aula5.jpg</span></div>
+    </div>
+    <div class="galeria-item">
+      <div class="galeria-placeholder"><i class="fas fa-image"></i><span>aula6.jpg</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <span class="tag">Garanta a vaga</span>
+  <h2>Uma experiência que vai além <span>da tecnologia</span></h2>
+  <p>
+    Formando alunos mais criativos, confiantes e preparados para resolver problemas no mundo real. As vagas são limitadas — garante a do seu filho!
+  </p>
+  <a href="contato.html" class="btn-matricula">
+    <i class="fas fa-user-plus"></i>
+    Quero matricular meu filho(a)
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-bottom">
+    <p>© 2025 Luis da Robótica. Todos os direitos reservados.</p>
+    <p class="dev-credit">
+      Desenvolvido por <a href="https://www.linkedin.com/in/yasmin-silveira-2394731ba/" target="_blank" rel="noopener noreferrer">Yasmin Silveira</a>
+    </p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

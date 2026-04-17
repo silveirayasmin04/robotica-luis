@@ -1,0 +1,384 @@
+/* =========================
+   RESET E BASE
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+body {
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  background: #000000;
+  color: white;
+  line-height: 1.6;
+}
+ 
+/* =========================
+   HEADER (TOPO FIXO)
+========================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 60px;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.3s;
+}
+ 
+/* LOGO */
+.logo img {
+  height: 55px;
+  transition: transform 0.3s;
+}
+ 
+.logo img:hover {
+  transform: scale(1.04);
+}
+ 
+/* =========================
+   MENU
+========================= */
+nav {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+ 
+nav a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  position: relative;
+  transition: color 0.3s;
+  letter-spacing: 0.3px;
+}
+ 
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: white;
+  left: 0;
+  bottom: -4px;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+ 
+nav a:hover {
+  color: white;
+}
+ 
+nav a:hover::after {
+  width: 100%;
+}
+ 
+/* =========================
+   MENU HAMBURGUER
+========================= */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  padding: 4px;
+}
+ 
+/* =========================
+   HERO PRINCIPAL (HOME)
+========================= */
+.hero-main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 60px 60px;
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(4, 5, 8, 0.75) 100%),
+    url('crianca.jpg') center/cover no-repeat;
+  position: relative;
+}
+ 
+.hero-main h1 {
+  font-size: 52px;
+  max-width: 580px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+ 
+.hero-main h1 span {
+  color: #424ef5;
+}
+ 
+.hero-main p {
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 480px;
+  margin-top: 16px;
+  font-size: 16px;
+}
+ 
+/* =========================
+   BOTÕES
+========================= */
+.buttons {
+  margin-top: 32px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+ 
+.btn {
+  padding: 13px 28px;
+  background: white;
+  color: black;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.25s, box-shadow 0.25s;
+  display: inline-block;
+}
+ 
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+}
+ 
+.btn-outline {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  color: white;
+}
+ 
+.btn-outline:hover {
+  background: #4542f5;
+  border-color: #5442f5;
+  color: white;
+  box-shadow: 0 8px 24px rgba(66, 69, 245, 0.35);
+}
+ 
+/* =========================
+   HERO SOBRE
+========================= */
+.sobre-hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 60px 60px;
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(10, 15, 28, 0.92) 100%),
+    url('fundosobre.png') center/cover no-repeat;
+}
+ 
+.sobre-hero h1 {
+  font-size: 50px;
+  max-width: 500px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+ 
+/* =========================
+   CARDS
+========================= */
+.sobre-cards {
+  display: flex;
+  gap: 20px;
+  padding: 60px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+ 
+.card {
+  background: linear-gradient(145deg, #0f2f74, #0a1e4e);
+  padding: 24px;
+  border-radius: 14px;
+  width: 260px;
+  border: 1px solid rgba(125, 158, 250, 0.15);
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+ 
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(125, 158, 250, 0.5);
+  box-shadow: 0 12px 32px rgba(15, 47, 116, 0.4);
+}
+ 
+/* =========================
+   APRESENTAÇÃO FINAL
+========================= */
+.sobre-apresentacao {
+  text-align: center;
+  padding: 60px 20px;
+}
+ 
+.sobre-apresentacao h2 {
+  font-size: 30px;
+  font-weight: 700;
+}
+ 
+.sobre-apresentacao p {
+  max-width: 600px;
+  margin: 16px auto 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+}
+ 
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  background: #050816;
+  padding: 50px 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+ 
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+ 
+.footer h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+ 
+.footer p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 15px;
+}
+ 
+.whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #07c24c;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 14px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+ 
+.whatsapp img {
+  width: 20px;
+}
+ 
+.whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(15, 167, 70, 0.842);
+}
+ 
+/* Rodapé inferior */
+.footer-bottom {
+  margin-top: 40px;
+  padding: 18px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+ 
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 13px;
+  margin: 0;
+}
+ 
+.footer-bottom .dev-credit {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 13px;
+}
+ 
+.footer-bottom .dev-credit a {
+  color: rgba(135, 66, 245, 0.85);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s;
+}
+ 
+.footer-bottom .dev-credit a:hover {
+  color: #a76df7;
+  text-decoration: underline;
+}
+ 
+/* =========================
+   RESPONSIVO (CELULAR)
+========================= */
+@media (max-width: 768px) {
+ 
+  header {
+    padding: 14px 20px;
+  }
+ 
+  nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(3, 27, 138, 0.97);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    display: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+ 
+  nav.active {
+    display: flex;
+  }
+ 
+  .menu-toggle {
+    display: block;
+  }
+ 
+  .hero-main {
+    padding: 100px 24px 40px;
+  }
+ 
+  .hero-main h1 {
+    font-size: 30px;
+  }
+ 
+  .sobre-hero {
+    padding: 100px 24px 40px;
+  }
+ 
+  .sobre-hero h1 {
+    font-size: 28px;
+  }
+ 
+  .sobre-cards {
+    padding: 40px 20px;
+  }
+ 
+  .buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+ 

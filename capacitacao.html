@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capacitações – Luis da Robótica</title>
+  <link rel="icon" type="image/png" href="logotipo.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+
+    /* =====================
+       HERO
+    ===================== */
+    .cap-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px 60px 80px;
+      background:
+        linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(10,15,28,0.92) 100%),
+        url('prof.png') center/cover no-repeat;
+    }
+
+    .cap-hero .tag {
+      display: inline-block;
+      background: rgba(14, 165, 233, 0.18);
+      border: 1px solid rgba(14, 165, 233, 0.35);
+      color: #7DD3F5;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .cap-hero h1 {
+      font-size: 52px;
+      font-weight: 800;
+      max-width: 620px;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+
+    .cap-hero h1 span {
+      color: #0EA5E9;
+    }
+
+    .cap-hero p {
+      color: rgba(255,255,255,0.72);
+      font-size: 17px;
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    /* =====================
+       SEÇÃO: FORMAÇÃO
+    ===================== */
+    .formacao-section {
+      background: #03051a;
+      padding: 90px 60px;
+      display: flex;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .formacao-texto {
+      flex: 1;
+    }
+
+    .formacao-texto .section-label {
+      display: inline-block;
+      background: rgba(14, 165, 233, 0.18);
+      border: 1px solid rgba(14, 165, 233, 0.35);
+      color: #7DD3F5;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .formacao-texto h2 {
+      font-size: 34px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .formacao-texto h2 span {
+      color: #0EA5E9;
+    }
+
+    .formacao-texto p {
+      color: rgba(255,255,255,0.7);
+      font-size: 16px;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .formacao-lista {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .formacao-lista li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: rgba(255,255,255,0.75);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .formacao-lista li i {
+      color: #0EA5E9;
+      font-size: 15px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .formacao-img {
+      flex-shrink: 0;
+      width: 420px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 2px solid rgba(14,165,233,0.25);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    /* =====================
+       SEÇÃO: SAIU NA MÍDIA
+    ===================== */
+    .midia-section {
+      background: #000000;
+      padding: 90px 60px;
+    }
+
+    .midia-section .section-label {
+      display: inline-block;
+      background: rgba(14, 165, 233, 0.18);
+      border: 1px solid rgba(14, 165, 233, 0.35);
+      color: #7DD3F5;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .midia-section h2 {
+      font-size: 34px;
+      font-weight: 800;
+      margin-bottom: 48px;
+      line-height: 1.2;
+    }
+
+    .midia-section h2 span {
+      color: #0EA5E9;
+    }
+
+    .midia-card {
+      display: flex;
+      gap: 48px;
+      align-items: center;
+      background: linear-gradient(145deg, #0d0d1a, rgba(10,30,78,0.25));
+      border: 1px solid rgba(14,165,233,0.15);
+      border-radius: 16px;
+      overflow: hidden;
+      max-width: 900px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .midia-card:hover {
+      border-color: rgba(14,165,233,0.4);
+      box-shadow: 0 12px 40px rgba(14,165,233,0.1);
+    }
+
+    .midia-card-foto {
+      width: 340px;
+      height: 240px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .midia-card-info {
+      padding: 32px 40px 32px 0;
+      flex: 1;
+    }
+
+    .midia-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(14,165,233,0.12);
+      border: 1px solid rgba(14,165,233,0.25);
+      color: #7DD3F5;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .midia-badge i {
+      font-size: 12px;
+    }
+
+    .midia-card-info h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .midia-card-info p {
+      color: rgba(255,255,255,0.65);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .midia-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0e53e9;
+      color: white;
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.25s, transform 0.25s;
+    }
+
+    .midia-link:hover {
+      background: #38BDF8;
+      transform: translateY(-2px);
+    }
+
+    .midia-link i {
+      font-size: 13px;
+    }
+
+    /* =====================
+       SEÇÃO: PROFESSORES NA PRÁTICA
+    ===================== */
+    .pratica-section {
+      background: #03051a;
+      padding: 90px 60px;
+    }
+
+    .pratica-section .section-label {
+      display: inline-block;
+      background: rgba(14, 165, 233, 0.18);
+      border: 1px solid rgba(14, 165, 233, 0.35);
+      color: #7DD3F5;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .pratica-section h2 {
+      font-size: 34px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .pratica-section h2 span {
+      color: #0EA5E9;
+    }
+
+    .pratica-section .subtitulo {
+      color: rgba(255,255,255,0.6);
+      font-size: 16px;
+      margin-bottom: 48px;
+    }
+
+    .pratica-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .pratica-card {
+      background: linear-gradient(145deg, #0d0d1a, rgba(10,30,78,0.2));
+      border: 1px solid rgba(14,165,233,0.12);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .pratica-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(14,165,233,0.4);
+      box-shadow: 0 12px 36px rgba(14,165,233,0.1);
+    }
+
+    .pratica-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* placeholder quando não tem a foto */
+    .pratica-card .foto-placeholder {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #0a1e4e, #0d1b3e);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: rgba(14,165,233,0.4);
+    }
+
+    .pratica-card .foto-placeholder i {
+      font-size: 36px;
+    }
+
+    .pratica-card .foto-placeholder span {
+      font-size: 13px;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .pratica-card-legenda {
+      padding: 16px 20px 20px;
+    }
+
+    .pratica-card-legenda h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: white;
+    }
+
+    .pratica-card-legenda p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.5;
+    }
+
+    /* =====================
+       FOOTER
+    ===================== */
+    .footer {
+      background: #050816;
+      padding: 30px 20px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-bottom {
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      color: rgba(255,255,255,0.35);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .footer-bottom .dev-credit a {
+      color: rgba(14, 91, 233, 0.85);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.25s;
+    }
+
+    .footer-bottom .dev-credit a:hover {
+      color: #38BDF8;
+      text-decoration: underline;
+    }
+
+    /* =====================
+       RESPONSIVO
+    ===================== */
+    @media (max-width: 768px) {
+      .cap-hero {
+        padding: 110px 24px 60px;
+      }
+
+      .cap-hero h1 {
+        font-size: 30px;
+      }
+
+      .formacao-section {
+        flex-direction: column;
+        padding: 60px 24px;
+        gap: 36px;
+      }
+
+      .formacao-img {
+        width: 100%;
+        height: 220px;
+      }
+
+      .midia-section {
+        padding: 60px 24px;
+      }
+
+      .midia-card {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .midia-card-foto {
+        width: 100%;
+        height: 200px;
+      }
+
+      .midia-card-info {
+        padding: 24px;
+      }
+
+      .pratica-section {
+        padding: 60px 24px;
+      }
+
+      .pratica-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .pratica-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <img src="logotipo.png" alt="Logo Luis da Robótica">
+  </div>
+
+  <nav id="menu">
+    <a href="index.html">Home</a>
+     <a href="sobre.html">Sobre Mim</a>
+    <a href="mentes.html">Professores</a>
+    <a href="alunos.html">Matricule seu filho(a)</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
+</header>
+
+<!-- HERO -->
+<section class="cap-hero">
+  
+  <h1>Capacitação em Robótica para <span>Escolas e Professores.</span></h1>
+  <p> Formação prática e certificada para equipes escolares e grupos
+de professores.</p>
+</section>
+
+<!-- FORMAÇÃO -->
+<section class="formacao-section">
+  <div class="formacao-texto">
+    <span class="section-label">O que é</span>
+    <h2>Formação prática para <span>educadores</span></h2>
+    <p>Leve a Robótica Educacional para dentro da sua escola através de
+uma capacitação presencial que vai muito além de montar robôs. 
+    </p>
+    <p>
+      Os
+professores aprendem, na prática, como planejar aulas, aplicar metodologias
+ativas e desenvolver habilidades essenciais nos alunos — mesmo com
+materiais simples. A formação une teoria pedagógica, projetos práticos com
+Arduino e cultura maker, além de um método estruturado que permite aplicar
+a Robótica de forma clara, envolvente e alinhada à
+ <strong> BNCC Computação.</strong>
+    </p>
+    <ul class="formacao-lista">
+      <li><i class="fas fa-check-circle"></i> Aplicação prática da robótica em sala de aula</li>
+      <li><i class="fas fa-check-circle"></i> Planejamento de aulas com começo, meio e fim</li>
+      <li><i class="fas fa-check-circle"></i> Metodologias ativas (STEAM, PBL e cultura maker)</li>
+      <li><i class="fas fa-check-circle"></i> Projetos com Arduino e materiais acessíveis</li>
+       <li><i class="fas fa-check-circle"></i> Alinhamento com a BNCC Computação</li>
+      <li><i class="fas fa-check-circle"></i>Desenvolvimento de habilidades como autonomia, criatividade e resolução
+de problemas</li>
+      <li><i class="fas fa-check-circle"></i> Método estruturado (3E’s: Explorar, Executar e Evoluir)</li>
+      <li><i class="fas fa-check-circle"></i> Suporte durante a capacitação</li>
+      <li><i class="fas fa-check-circle"></i> Certificação para os participantes</li>
+    </ul>
+  </div>
+
+  <!-- Substitua por uma foto real da capacitação se desejar -->
+  <img src="profpratica2.JPG" alt="Capacitação de professores" class="formacao-img">
+</section>
+
+<!-- SAIU NA MÍDIA -->
+<section class="midia-section">
+  <span class="section-label">Na imprensa</span>
+  <h2>Saiu na <span>mídia</span></h2>
+
+  <div class="midia-card">
+    <img src="reportagem.jpeg" alt="Reportagem sobre capacitação" class="midia-card-foto">
+
+    <div class="midia-card-info">
+      <span class="midia-badge"><i class="fas fa-newspaper"></i> Reportagem</span>
+      <h3>Professores participam de formações sobre alfabetização e robótica educacional — Prefeitura Municipal de Esteio</h3>
+      <p>
+       A atividade foi conduzida pelo especialista em Robótica Educacional Luís Menegussi.
+
+No encontro, foi abordada a implementação e a utilização das plataformas Scratch e Tinkercad, ferramentas de robótica que auxiliam os alunos no desenvolvimento de habilidades digitais e de raciocínio lógico.
+      </p>
+      <a href="https://www.esteio.rs.gov.br/noticia/24750/1057?titulo=Professores+participam+de+forma%C3%A7%C3%B5es+sobre+alfabetiza%C3%A7%C3%A3o+e+rob%C3%B3tica+educacional" target="_blank" rel="noopener noreferrer" class="midia-link">
+        <i class="fas fa-external-link-alt"></i>
+        Ler matéria completa
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROFESSORES NA PRÁTICA -->
+<section class="pratica-section">
+  <span class="section-label">Resultados reais</span>
+  <h2>Professores na <span>prática</span></h2>
+  <p class="subtitulo">Veja como funciona um pouco da formação.</p>
+
+  <div class="pratica-grid">
+
+    <!-- Card 1 — substitua prof1.jpg pelo nome real do arquivo -->
+    <div class="pratica-card">
+      <img src="profpratica.JPG" alt="Professor aplicando robótica">
+      <div class="pratica-card-legenda">
+        <div class="estrelas">⭐⭐⭐⭐⭐</div>
+        <p>Professores realizando a montagem de jogos com materiais recicláveis.</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="pratica-card">
+      <img src="profpratica3.JPG" alt="Professor aplicando robótica">
+      <div class="pratica-card-legenda">
+       <div class="estrelas">⭐⭐⭐⭐⭐</div>
+        <p>Grupo de professores apresentando seus jogos desenvolvidos na formação.</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="pratica-card">
+      <img src="vendoprof.JPG" alt="Professor aplicando robótica">
+      <div class="pratica-card-legenda">
+       <div class="estrelas">⭐⭐⭐⭐⭐</div>
+        <p>Luís da Robótica auxiliando nas dúvidas durante a dinâmica.</p>
+      </div>
+    </div>
+
+    <!-- Card 4 — placeholder para adicionar mais fotos -->
+    <div class="pratica-card">
+      <img src="testando.JPG" alt="Professor aplicando robótica">
+      <div class="pratica-card-legenda">
+       <div class="estrelas">⭐⭐⭐⭐⭐</div>
+        <p>Momento descontraído testando os jogos dos professores.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-bottom">
+    <p>© 2025 Luis da Robótica. Todos os direitos reservados.</p>
+    <p class="dev-credit">
+      Desenvolvido por <a href="https://www.linkedin.com/in/yasmin-silveira-2394731ba/" target="_blank" rel="noopener noreferrer">Yasmin Silveira</a>
+    </p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

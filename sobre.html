@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Mim – Luis da Robótica</title>
+  <link rel="icon" type="image/png" href="logotipo.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* =====================
+       HERO SOBRE
+    ===================== */
+    .sobre-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px 60px 60px;
+      background:
+        linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(10,15,28,0.92) 100%),
+        url('sobre.png') center/cover no-repeat;
+      gap: 60px;
+    }
+
+   
+
+    .sobre-hero-texto .tag {
+    display: inline-block;
+      background: rgba(14, 165, 233, 0.18);
+      border: 1px solid rgba(14, 165, 233, 0.35);
+      color: #7DD3F5;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .sobre-hero-texto h1 {
+      font-size: 50px;
+      font-weight: 800;
+      max-width: 580px;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+    }
+
+    .sobre-hero-texto h1 span {
+      color: #0EA5E9;
+    }
+
+    .sobre-hero-texto p {
+      color: rgba(255,255,255,0.7);
+      font-size: 16px;
+      max-width: 480px;
+      line-height: 1.7;
+    }
+
+    /* =====================
+       CARDS
+    ===================== */
+    .sobre-cards {
+      display: flex;
+      gap: 24px;
+      padding: 70px 60px;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: #03051a;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #0f2f74, #103281);
+      padding: 28px 24px;
+      border-radius: 14px;
+      width: 270px;
+      border: 1px solid rgba(125, 158, 250, 0.15);
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(125, 158, 250, 0.5);
+      box-shadow: 0 16px 40px rgba(15, 47, 116, 0.45);
+    }
+
+    .card .card-icon {
+      font-size: 28px;
+      margin-bottom: 14px;
+      display: block;
+      color: #4254f5;
+    }
+
+    .card h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* =====================
+       LINHA DO TEMPO
+    ===================== */
+    .timeline-section {
+      background: #000000;
+      padding: 80px 60px;
+    }
+
+    .timeline-section .section-label {
+      display: inline-block;
+      background:rgba(66, 93, 245, 0.18);
+      border: 1px solid rgba(66, 78, 245, 0.35);
+      color: #8a91f7;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .timeline-section h2 {
+      font-size: 34px;
+      font-weight: 800;
+      margin-bottom: 56px;
+      line-height: 1.2;
+    }
+
+    .timeline-section h2 span {
+      color: #0EA5E9;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #4e42f5, rgba(66, 78, 245, 0.1));
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 48px;
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      flex-shrink: 0;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #0c255f;
+      border: 2px solid #0EA5E9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 16px rgba(78, 66, 245, 0.3);
+    }
+
+    .timeline-dot i {
+      color: #0EA5E9;
+      font-size: 20px;
+    }
+
+    .timeline-body {
+      background: linear-gradient(145deg, #0d0d1a, rgba(10,30,78,0.2));
+      border: 1px solid rgba(66, 78, 245, 0.15);
+      border-radius: 14px;
+      padding: 24px 28px;
+      flex: 1;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .timeline-body:hover {
+      border-color: rgba(66, 93, 245, 0.4);
+      box-shadow: 0 8px 32px rgba(135,66,245,0.12);
+    }
+
+    .timeline-year {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+       background:rgba(66, 93, 245, 0.18);
+      border: 1px solid rgba(66, 78, 245, 0.35);
+      color: #8a91f7;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .timeline-body h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .timeline-body p {
+      color: rgba(255,255,255,0.68);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    /* =====================
+       APRESENTAÇÃO (MISSÃO)
+    ===================== */
+    .sobre-apresentacao {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 32px;
+      padding: 80px 60px;
+      background: #030620;
+    }
+
+    .sobre-apresentacao-foto {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 50%;
+      border: 3px solid #ffffff93;
+      box-shadow: 0 0 40px rgba(135, 66, 245, 0.2);
+    }
+
+    .sobre-apresentacao-texto h2 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .sobre-apresentacao-texto h2 span {
+      color: #0EA5E9;
+    }
+
+    .sobre-apresentacao-texto p {
+      color: rgba(255,255,255,0.7);
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* =====================
+       FOOTER
+    ===================== */
+    .footer {
+      background: #06091a;
+      padding: 30px 20px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-bottom {
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      color: rgba(255,255,255,0.35);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .footer-bottom .dev-credit a {
+      color: #0EA5E9;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.25s;
+    }
+
+    .footer-bottom .dev-credit a:hover {
+      color: #6d8df7;
+      text-decoration: underline;
+    }
+
+    /* =====================
+       RESPONSIVO
+    ===================== */
+    @media (max-width: 768px) {
+      .sobre-hero {
+        flex-direction: column;
+        padding: 110px 24px 60px;
+        text-align: center;
+        gap: 32px;
+      }
+
+      .sobre-hero-foto {
+        width: 220px;
+        height: 260px;
+      }
+
+      .sobre-hero-texto h1 {
+        font-size: 28px;
+      }
+
+      .sobre-cards {
+        padding: 50px 20px;
+      }
+
+      .timeline-section {
+        padding: 60px 20px;
+      }
+
+      .timeline-section h2 {
+        font-size: 26px;
+        margin-bottom: 40px;
+      }
+
+      .timeline::before {
+        left: 22px;
+      }
+
+      .timeline-dot {
+        width: 46px;
+        height: 46px;
+      }
+
+      .timeline-dot i {
+        font-size: 16px;
+      }
+
+      .timeline-body {
+        padding: 18px 20px;
+      }
+
+      .timeline-body h3 {
+        font-size: 16px;
+      }
+
+      .sobre-apresentacao {
+        padding: 60px 24px;
+      }
+
+      .sobre-apresentacao-foto {
+        width: 160px;
+        height: 160px;
+      }
+
+      .sobre-apresentacao-texto h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <img src="logotipo.png" alt="Logo Luis da Robótica">
+  </div>
+
+  <nav id="menu">
+    <a href="index.html">Home</a>
+    <a href="capacitacao.html">Capacitações</a>
+    <a href="mentes.html">Professores</a>
+    <a href="alunos.html">Matricule seu filho(a)</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
+</header>
+
+<!-- HERO -->
+<section class="sobre-hero">
+
+
+  <div class="sobre-hero-texto">
+  
+    <h1>Conheça mais sobre a trajetória do<span> Luís da Robótica</span></h1>
+ 
+  </div>
+    
+  <h1></h1>
+ <p></p>
+</section>
+
+
+
+<!-- LINHA DO TEMPO -->
+<section class="timeline-section">
+  <span class="section-label">Trajetória</span>
+  <h2>Uma história construída <span>com propósito</span></h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"><i class="fas fa-star"></i></div>
+      <div class="timeline-body">
+        <span class="timeline-year">2012</span>
+        <h3>O primeiro contato</h3>
+        <p>Como aluno do Colégio Coração de Maria, em Esteio/RS, tive meu primeiro contato com a Robótica Educacional. Uma curiosidade que, com o tempo, se transformaria em propósito.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"><i class="fas fa-trophy"></i></div>
+      <div class="timeline-body">
+        <span class="timeline-year">2012 – 2020</span>
+        <h3>Competidor e mentor da equipe Androids</h3>
+        <p>Vivi a robótica de forma intensa como competidor e mentor, participando de torneios e feiras de ciências pelo Brasil. Acumulei premiações e aprendi sobre dedicação, trabalho em equipe e criatividade — construindo conexões que moldaram o profissional que sou hoje.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"><i class="fas fa-graduation-cap"></i></div>
+      <div class="timeline-body">
+        <span class="timeline-year">Formação</span>
+        <h3>Mecatrônica pelo SENAI</h3>
+        <p>A formação técnica fortaleceu minha base e ampliou minha forma de enxergar a tecnologia na prática — mas foi na educação que encontrei o verdadeiro sentido no que faço.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"><i class="fas fa-chalkboard-teacher"></i></div>
+      <div class="timeline-body">
+        <span class="timeline-year">2021</span>
+        <h3>Início como educador</h3>
+        <p>Passei a atuar com alunos, professores e instituições que buscam um ensino mais significativo e conectado com o futuro. Também assumi o papel de juiz voluntário em torneios de robótica, mantendo participação ativa no ambiente que moldou minha formação.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"><i class="fas fa-rocket"></i></div>
+      <div class="timeline-body">
+        <span class="timeline-year">Fundação</span>
+        <h3>Mentes Makers e o Método dos 3Es</h3>
+        <p>Fundei a Mentes Makers para transformar a forma como a Robótica é ensinada. Desenvolvi o Método dos 3Es — uma abordagem que organiza o ensino em etapas claras e progressivas, conectando teoria e prática e desenvolvendo pensamento lógico, criatividade, autonomia e resolução de problemas.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"><i class="fas fa-heart"></i></div>
+      <div class="timeline-body">
+        <span class="timeline-year">Hoje</span>
+        <h3>A missão continua</h3>
+        <p>Em constante evolução — aprimorando práticas, estudando novas metodologias e me conectando com profissionais da área. Minha missão é tornar o aprendizado mais próximo, mais inspirador e mais significativo, ajudando cada aluno a perceber seu potencial.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MISSÃO -->
+<section class="sobre-apresentacao">
+  <img src="perfil.PNG" alt="Luis da Robótica" class="sobre-apresentacao-foto">
+
+  <div class="sobre-apresentacao-texto">
+    <h2>Robótica não é sobre <span>montar robôs</span></h2>
+    <p>
+      É uma ferramenta para desenvolver pensamento, autonomia e a capacidade de resolver
+      problemas reais. Acredito que cada aluno é capaz de construir o próprio caminho —
+      e estou aqui para ajudá-lo a perceber isso.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+ 
+  <div class="footer-bottom">
+    <p>© 2025 Luis da Robótica. Todos os direitos reservados.</p>
+    <p class="dev-credit">
+      Desenvolvido por <a href="https://www.linkedin.com/in/yasmin-silveira-2394731ba/" target="_blank" rel="noopener noreferrer">Yasmin Silveira</a>
+    </p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato – Luis da Robótica</title>
+  <link rel="icon" type="image/png" href="logotipo.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+
+    /* =====================
+       HERO
+    ===================== */
+    .contato-hero {
+      min-height: 55vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px 60px 60px;
+      background:
+        linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(10,15,28,0.92) 100%),
+        url('contato.jpg') center/cover no-repeat;
+    }
+
+    .contato-hero .tag {
+      display: inline-block;
+      background: rgba(14, 165, 233, 0.18);
+      border: 1px solid rgba(14, 165, 233, 0.35);
+      color: #7DD3F5;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .contato-hero h1 {
+      font-size: 50px;
+      font-weight: 800;
+      max-width: 580px;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+    }
+
+    .contato-hero h1 span {
+      color: #0EA5E9;
+    }
+
+    .contato-hero p {
+      color: rgba(255,255,255,0.7);
+      font-size: 16px;
+      max-width: 480px;
+      line-height: 1.7;
+    }
+
+    /* =====================
+       SEÇÃO PRINCIPAL
+    ===================== */
+    .contato-main {
+      background: #03051a;
+      padding: 90px 60px;
+      display: flex;
+      gap: 70px;
+      align-items: flex-start;
+    }
+
+    /* =====================
+       FORMULÁRIO
+    ===================== */
+    .form-wrapper {
+      flex: 1;
+    }
+
+    .form-wrapper .section-label {
+      display: inline-block;
+      background: rgba(14, 165, 233, 0.18);
+      border: 1px solid rgba(14, 165, 233, 0.35);
+      color: #7DD3F5;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .form-wrapper h2 {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 32px;
+      line-height: 1.2;
+    }
+
+    .form-wrapper h2 span {
+      color: #0EA5E9;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.3px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 13px 16px;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.25s, background 0.25s;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255,255,255,0.3);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(14,165,233,0.6);
+      background: rgba(14,165,233,0.06);
+    }
+
+    .form-group select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237DD3F5' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      cursor: pointer;
+    }
+
+    .form-group select option {
+      background: #0a1e4e;
+      color: white;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    /* campo "outras" oculto por padrão */
+    #outras-texto {
+      display: none;
+      margin-top: 12px;
+    }
+
+    .btn-enviar {
+      width: 100%;
+      padding: 15px;
+      background: #0e5be9;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-enviar:hover {
+      background: #38BDF8;
+      transform: translateY(-2px);
+    }
+
+    /* =====================
+       SIDEBAR DIREITA
+    ===================== */
+    .contato-sidebar {
+      width: 320px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .sidebar-card {
+      background: linear-gradient(145deg, #0d0d1a, rgba(10,30,78,0.2));
+      border: 1px solid rgba(14,165,233,0.15);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .sidebar-card:hover {
+      border-color: rgba(14,165,233,0.35);
+      box-shadow: 0 8px 30px rgba(14,165,233,0.08);
+    }
+
+    .sidebar-card .card-icon-wrap {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 20px;
+    }
+
+    .icon-green { background: rgba(37,211,102,0.15); background: #07c24c;; }
+    .icon-pink  { background: rgba(225,48,108,0.15); color: #E1306C; }
+    .icon-blue  { background: rgba(14,165,233,0.15); color: #0EA5E9; }
+
+    .sidebar-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .sidebar-card p {
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+
+    .sidebar-card p strong {
+      color: rgba(255,255,255,0.85);
+    }
+
+    .sidebar-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .sidebar-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp {
+      background: #00ce45;
+      color: white;
+    }
+
+    .btn-whatsapp:hover {
+      box-shadow: 0 6px 20px rgba(37,211,102,0.35);
+    }
+
+    .btn-instagram {
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      color: white;
+    }
+
+    .btn-instagram:hover {
+      box-shadow: 0 6px 20px rgba(225,48,108,0.3);
+    }
+
+    .btn-email {
+      background: #005aaf;
+      color: white;
+    }
+
+    .btn-email:hover {
+      box-shadow: 0 6px 20px rgba(14,165,233,0.3);
+    }
+
+    /* =====================
+       FOOTER
+    ===================== */
+    .footer {
+      background: #050816;
+      padding: 30px 20px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-bottom {
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      color: rgba(255,255,255,0.35);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .footer-bottom .dev-credit a {
+      color: rgba(14, 165, 233, 0.85);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.25s;
+    }
+
+    .footer-bottom .dev-credit a:hover {
+      color: #38BDF8;
+      text-decoration: underline;
+    }
+
+    /* =====================
+       RESPONSIVO
+    ===================== */
+    @media (max-width: 900px) {
+      .contato-main {
+        flex-direction: column;
+        padding: 60px 24px;
+        gap: 40px;
+      }
+
+      .contato-sidebar {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .sidebar-card {
+        flex: 1;
+        min-width: 220px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contato-hero {
+        padding: 110px 24px 50px;
+      }
+
+      .contato-hero h1 {
+        font-size: 30px;
+      }
+
+      .contato-sidebar {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <img src="logotipo.png" alt="Logo Luis da Robótica">
+  </div>
+
+  <nav id="menu">
+    <a href="index.html">Home</a>
+    <a href="sobre.html">Sobre Mim</a>
+    <a href="capacitacao.html">Capacitações</a>
+    <a href="mentes.html">Mentes Makers</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
+</header>
+
+<!-- HERO -->
+<section class="contato-hero">
+ 
+  <h1>Vamos conversar <span>sobre robótica?</span></h1>
+  <p>Preencha o formulário ou escolha o canal de contato que preferir. Responderei o mais breve possível!</p>
+</section>
+
+<!-- MAIN -->
+<section class="contato-main">
+
+  <!-- FORMULÁRIO -->
+  <div class="form-wrapper">
+    <span class="section-label">Formulário</span>
+    <h2>Mande sua <span>mensagem</span></h2>
+
+    <div class="form-group">
+      <label for="nome">Nome completo</label>
+      <input type="text" id="nome" placeholder="Seu nome">
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" placeholder="seuemail@exemplo.com">
+    </div>
+
+    <div class="form-group">
+      <label for="celular">Celular / WhatsApp</label>
+      <input type="tel" id="celular" placeholder="(51) 99999-9999">
+    </div>
+
+    <div class="form-group">
+      <label for="assunto">Assunto</label>
+      <select id="assunto" onchange="mostrarOutras()">
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="capacitacao">Capacitação para professores</option>
+        <option value="matricula">Desejo matricular o meu filho</option>
+        <option value="outras">Outras</option>
+      </select>
+
+      <textarea id="outras-texto" placeholder="Conte mais sobre o que você precisa..."></textarea>
+    </div>
+
+    <button class="btn-enviar" onclick="enviarWhatsApp()">
+      <i class="fab fa-whatsapp"></i>
+      Enviar pelo WhatsApp
+    </button>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="contato-sidebar">
+
+    <!-- WhatsApp -->
+    <div class="sidebar-card">
+      <div class="card-icon-wrap icon-green">
+        <i class="fab fa-whatsapp"></i>
+      </div>
+      <h3>WhatsApp</h3>
+      <p>Prefere uma conversa direta? Fale comigo pelo WhatsApp. <strong>Respondo rápido!</strong></p>
+      <a href="https://wa.me/5551991377158" target="_blank" rel="noopener noreferrer" class="sidebar-btn btn-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+        Iniciar conversa
+      </a>
+    </div>
+
+    <!-- Instagram -->
+    <div class="sidebar-card">
+      <div class="card-icon-wrap icon-pink">
+        <i class="fab fa-instagram"></i>
+      </div>
+      <h3>Instagram</h3>
+      <p>No Instagram compartilho <strong>conteúdos sobre robótica educacional</strong>, bastidores das capacitações, dicas para professores e novidades da Mentes Makers. Vem me seguir!</p>
+      <a href="https://www.instagram.com/luis_robotica?igsh=dTA1c2g1b3B3aTU5&utm_source=qr" target="_blank" rel="noopener noreferrer" class="sidebar-btn btn-instagram">
+        <i class="fab fa-instagram"></i>
+        Seguir @luis_robotica
+      </a>
+    </div>
+
+    <!-- E-mail -->
+    <div class="sidebar-card">
+      <div class="card-icon-wrap icon-blue">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <h3>E-mail</h3>
+      <p>Para assuntos mais formais ou parcerias, pode me enviar um e-mail diretamente.</p>
+      <a href="mailto:luisdarobotica@gmail.com" class="sidebar-btn btn-email">
+        <i class="fas fa-envelope"></i>
+        luisdarobotica@gmail.com
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-bottom">
+    <p>© 2025 Luis da Robótica. Todos os direitos reservados.</p>
+    <p class="dev-credit">
+      Desenvolvido por <a href="https://www.linkedin.com/in/yasmin-silveira-2394731ba/" target="_blank" rel="noopener noreferrer">Yasmin Silveira</a>
+    </p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  function mostrarOutras() {
+    const assunto = document.getElementById('assunto').value;
+    const outrasTexto = document.getElementById('outras-texto');
+    outrasTexto.style.display = assunto === 'outras' ? 'block' : 'none';
+  }
+
+  function enviarWhatsApp() {
+    const nome    = document.getElementById('nome').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const celular = document.getElementById('celular').value.trim();
+    const assunto = document.getElementById('assunto').value;
+    const outras  = document.getElementById('outras-texto').value.trim();
+
+    if (!nome || !email || !celular || !assunto) {
+      alert('Por favor, preencha todos os campos antes de enviar.');
+      return;
+    }
+
+    const assuntoTexto = {
+      capacitacao: 'Capacitação para professores',
+      matricula:   'Desejo matricular o meu filho',
+      outras:      'Outras'
+    }[assunto];
+
+    let mensagem =
+      `Olá, Luís! 👋\n\n` +
+      `*Nome:* ${nome}\n` +
+      `*E-mail:* ${email}\n` +
+      `*Celular:* ${celular}\n` +
+      `*Assunto:* ${assuntoTexto}`;
+
+    if (assunto === 'outras' && outras) {
+      mensagem += `\n*Mensagem:* ${outras}`;
+    }
+
+    const url = `https://wa.me/5551991377158?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, '_blank');
+  }
+</script>
+</body>
+</html>

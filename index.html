@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luis da Robótica</title>
+   <link rel="icon" type="image/png" href="logotipo.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+
+    /* =====================
+       SUBTÍTULO HERO
+    ===================== */
+    .hero-sub {
+      margin-top: 20px;
+      color: rgba(255,255,255,0.55);
+      font-size: 15px;
+      max-width: 460px;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    /* =====================
+       TÍTULO SEÇÃO BLOCOS
+    ===================== */
+    .blocos-titulo {
+      text-align: center;
+      padding: 70px 60px 10px;
+      background: #03051a;
+    }
+
+    .blocos-titulo h2 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.35;
+      max-width: 700px;
+      margin: 0 auto;
+      color: white;
+    }
+
+    .blocos-titulo h2 span {
+      color: #0EA5E9;
+    }
+
+    /* =====================
+       CARDS / BLOCOS
+    ===================== */
+    .sobre-cards {
+      display: flex;
+      gap: 24px;
+      padding: 40px 60px 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: #03051a;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #0f2f74, #0a1e4e);
+      padding: 32px 26px;
+      border-radius: 14px;
+      width: 280px;
+      border: 1px solid rgba(125, 158, 250, 0.15);
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(14,165,233,0.5);
+      box-shadow: 0 16px 40px rgba(14,165,233,0.15);
+    }
+
+    .card .card-icon {
+      font-size: 28px;
+      color: #0EA5E9;
+    }
+
+    .card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: white;
+    }
+
+    .card p {
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .card-btn {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 10px 18px;
+      background: rgba(14,165,233,0.15);
+      border: 1px solid rgba(14,165,233,0.35);
+      color: #7DD3F5;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s, transform 0.2s;
+      text-align: center;
+    }
+
+    .card-btn:hover {
+      background: #0EA5E9;
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    /* =====================
+       FRASE ABAIXO DOS BLOCOS
+    ===================== */
+    .blocos-frase {
+      background: #03051a;
+      text-align: center;
+      padding: 28px 60px 70px;
+    }
+
+    .blocos-frase p {
+      color: rgba(255,255,255,0.5);
+      font-size: 15px;
+      font-style: italic;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* =====================
+       CTA WHATSAPP FINAL
+    ===================== */
+    .cta-whatsapp {
+      background: #000000;
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .cta-whatsapp h2 {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.2;
+      max-width: 500px;
+    }
+
+    .cta-whatsapp h2 span {
+      color: #0EA5E9;
+    }
+
+    .btn-whatsapp-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #1eb154;
+      color: white;
+      text-decoration: none;
+      padding: 15px 32px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .btn-whatsapp-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(37,211,102,0.4);
+    }
+
+    /* =====================
+       FOOTER
+    ===================== */
+    .footer {
+      background: #050816;
+      padding: 0 20px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-bottom {
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      color: rgba(255,255,255,0.35);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .footer-bottom .dev-credit a {
+      color: rgba(14,165,233,0.85);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.25s;
+    }
+
+    .footer-bottom .dev-credit a:hover {
+      color: #38BDF8;
+      text-decoration: underline;
+    }
+
+    /* =====================
+       RESPONSIVO
+    ===================== */
+    @media (max-width: 768px) {
+      .blocos-titulo {
+        padding: 50px 24px 10px;
+      }
+
+      .blocos-titulo h2 {
+        font-size: 22px;
+      }
+
+      .sobre-cards {
+        padding: 32px 20px 16px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 360px;
+      }
+
+      .blocos-frase {
+        padding: 20px 24px 50px;
+      }
+
+      .cta-whatsapp {
+        padding: 60px 24px;
+      }
+
+      .cta-whatsapp h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <img src="logotipo.png" alt="Logo Luis da Robótica">
+  </div>
+
+  <nav id="menu">
+    <a href="sobre.html">Sobre Mim</a>
+    <a href="capacitacao.html">Capacitações</a>
+    <a href="mentes.html">Professores</a>
+    <a href="alunos.html">Matricule seu filho(a)</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
+</header>
+
+<!-- HERO -->
+<section class="hero-main">
+  <h1>ROBÓTICA EDUCACIONAL NÃO É SOBRE MONTAR ROBÔS!</h1>
+
+  <p>
+    É sobre desenvolver habilidades para o futuro através de aulas,
+    formações e experiências práticas com tecnologia.
+  </p>
+
+  <div class="buttons">
+    <a href="sobre.html" class="btn">Quero iniciar agora</a>
+    <a href="contato.html" class="btn btn-outline">Entrar em contato</a>
+  </div>
+
+  <p class="hero-sub">
+    Para alunos, professores e todos que querem aprender Robótica Educacional na prática.
+  </p>
+</section>
+
+<!-- TÍTULO SEÇÃO BLOCOS -->
+<div class="blocos-titulo">
+  <h2>Existem diferentes formas de viver a robótica: <span>Descubra a que faz mais sentido para você!</span></h2>
+</div>
+
+<!-- BLOCOS -->
+<section class="sobre-cards">
+
+  <!-- Bloco 1: Capacitação -->
+  <div class="card">
+    <i class="fas fa-chalkboard-teacher card-icon"></i>
+    <h3>Capacitação em Robótica para Professores</h3>
+    <p>Formação prática para professores que querem levar robótica para sala de aula com segurança, metodologia e projetos aplicáveis no dia a dia.</p>
+    <a href="capacitacoes.html" class="card-btn">Quero saber mais</a>
+  </div>
+
+  <!-- Bloco 2: Comunidade -->
+  <div class="card">
+    <i class="fas fa-users card-icon"></i>
+    <h3>Comunidade e Formação Contínua para Professores</h3>
+    <p>Aprenda a aplicar robótica em sala de aula com aulas online, projetos práticos, materiais acessíveis e metodologias que engajam os alunos de verdade.</p>
+    <a href="mentes.html" class="card-btn">Entrar na Comunidade Mentes Makers</a>
+  </div>
+
+  <!-- Bloco 3: Alunos -->
+  <div class="card">
+    <i class="fas fa-robot card-icon"></i>
+    <h3>Aulas de Robótica para Alunos (Arduino Maker)</h3>
+    <p>Aulas presenciais com projetos práticos, unindo Arduino e cultura maker. Cada encontro é uma nova criação que desenvolve lógica, criatividade e autonomia.</p>
+    <a href="https://wa.me/5551991377158" class="card-btn">Quero matricular meu filho(a)</a>
+  </div>
+
+</section>
+
+<!-- FRASE ABAIXO DOS BLOCOS -->
+<div class="blocos-frase">
+  <p>Para professores que querem ensinar com tecnologia e alunos que querem aprender criando.</p>
+</div>
+
+<!-- CTA WHATSAPP -->
+<section class="cta-whatsapp">
+  <h2>Dúvidas? Entre em <span>contato agora mesmo</span></h2>
+  <a href="https://wa.me/5551991377158" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-cta">
+    <i class="fab fa-whatsapp"></i>
+    Iniciar conversa no WhatsApp
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-bottom">
+    <p>© 2025 Luis da Robótica. Todos os direitos reservados.</p>
+    <p class="dev-credit">
+      Desenvolvido por <a href="https://www.linkedin.com/in/yasmin-silveira-2394731ba/" target="_blank" rel="noopener noreferrer">Yasmin Silveira</a>
+    </p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
