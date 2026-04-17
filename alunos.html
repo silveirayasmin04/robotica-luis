@@ -117,19 +117,14 @@
       margin-bottom: 16px;
     }
 
-    .foto-placeholder-lg {
-      flex-shrink: 0;
-      width: 380px;
-      height: 460px;
+ .foto-placeholder-lg {
+       flex-shrink: 0;
+      width: 420px;
+      height: 300px;
+      object-fit: cover;
       border-radius: 16px;
-      border: 2px dashed rgba(14,165,233,0.25);
-      background: rgba(10,30,78,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 12px;
-      color: rgba(14,165,233,0.4);
+      border: 2px solid rgba(14,165,233,0.25);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     }
 
     .foto-placeholder-lg i { font-size: 40px; }
@@ -448,8 +443,9 @@
 
   <!-- Substitua por <img src="foto-aula.jpg" ...> quando tiver a foto -->
   <div class="foto-placeholder-lg">
-    <i class="fas fa-image"></i>
-    <span>Adicionar foto das aulas</span>
+    <img src="criancas3.JPG" alt="Alunos" class="foto-placeholder-lg">
+    </div>
+    
   </div>
 </section>
 
@@ -479,6 +475,7 @@
       <span class="info-emoji">🧰</span>
       <p><strong>Sem custo</strong> com materiais</p>
     </div>
+    
   </div>
 </section>
 
@@ -496,13 +493,15 @@
     <div class="beneficio-item"><i class="fas fa-users"></i><p>Ambiente colaborativo e motivador</p></div>
     <div class="beneficio-item"><i class="fas fa-certificate"></i><p>Certificado ao final do curso</p></div>
   </div>
+  
 </section>
 
 <!-- GALERIA -->
 <section class="galeria-section">
   <span class="section-label">Nossas aulas</span>
   <h2>Conheça mais sobre <span>nossas aulas</span></h2>
-  <p class="galeria-sub">Momentos reais de aprendizado, criação e descoberta.</p>
+ 
+    
 
   <div class="galeria-grid">
     <div class="galeria-item">

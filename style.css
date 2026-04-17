@@ -142,8 +142,8 @@ nav a:hover::after {
  
 .btn {
   padding: 13px 28px;
-  background: white;
-  color: black;
+  background: rgb(9, 122, 197);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
