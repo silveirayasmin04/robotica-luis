@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aulas de Robótica – Luis da Robótica</title>
   <link rel="icon" type="image/png" href="logotipo.png">
-  <link rel="icon" type="image/png" href="logotipo.png">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
 
-    /* HERO */
     .aluno-hero {
       min-height: 100vh;
       display: flex;
@@ -19,7 +17,7 @@
       justify-content: center;
       padding: 140px 60px 80px;
       background:
-        linear-gradient(135deg, rgba(0, 0, 0, 0.856) 0%, rgba(10, 15, 28, 0.856) 100%),
+        linear-gradient(135deg, rgba(0,0,0,0.856) 0%, rgba(10,15,28,0.856) 100%),
         url('fundoprofes.jpeg') center/cover no-repeat;
     }
 
@@ -77,7 +75,6 @@
       box-shadow: 0 10px 30px rgba(14,165,233,0.35);
     }
 
-    /* SOBRE AS AULAS */
     .sobre-aulas {
       background: #03051a;
       padding: 90px 60px;
@@ -117,8 +114,9 @@
       margin-bottom: 16px;
     }
 
- .foto-placeholder-lg {
-       flex-shrink: 0;
+    /* FOTO LATERAL — classe dedicada, sem conflito */
+    .foto-lateral {
+      flex-shrink: 0;
       width: 420px;
       height: 300px;
       object-fit: cover;
@@ -127,13 +125,6 @@
       box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     }
 
-    .foto-placeholder-lg i { font-size: 40px; }
-    .foto-placeholder-lg span {
-      font-size: 13px;
-      color: rgba(255,255,255,0.25);
-    }
-
-    /* INFORMAÇÕES IMPORTANTES */
     .info-section {
       background: #000000;
       padding: 80px 60px;
@@ -152,7 +143,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       gap: 16px;
-      margin-bottom: 0;
     }
 
     .info-item {
@@ -185,7 +175,6 @@
       margin: 0;
     }
 
-    /* BENEFÍCIOS */
     .beneficios-section {
       background: #03051a;
       padding: 90px 60px;
@@ -236,7 +225,6 @@
       margin: 0;
     }
 
-    /* GALERIA */
     .galeria-section {
       background: #000000;
       padding: 90px 60px;
@@ -250,12 +238,6 @@
     }
 
     .galeria-section h2 span { color: #0EA5E9; }
-
-    .galeria-section .galeria-sub {
-      color: rgba(255,255,255,0.55);
-      font-size: 15px;
-      margin-bottom: 40px;
-    }
 
     .galeria-grid {
       display: grid;
@@ -283,26 +265,6 @@
       display: block;
     }
 
-    .galeria-placeholder {
-      width: 100%;
-      height: 100%;
-      background: rgba(10,30,78,0.15);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      color: rgba(14,165,233,0.35);
-      min-height: 200px;
-    }
-
-    .galeria-placeholder i { font-size: 28px; }
-    .galeria-placeholder span {
-      font-size: 12px;
-      color: rgba(255,255,255,0.2);
-    }
-
-    /* CTA FINAL */
     .cta-final {
       background: #03051a;
       padding: 90px 60px;
@@ -332,7 +294,6 @@
       margin-bottom: 16px;
     }
 
-    /* FOOTER */
     .footer {
       background: #050816;
       padding: 30px 20px 0;
@@ -348,11 +309,7 @@
       text-align: center;
     }
 
-    .footer-bottom p {
-      color: rgba(255,255,255,0.35);
-      font-size: 13px;
-      margin: 0;
-    }
+    .footer-bottom p { color: rgba(255,255,255,0.35); font-size: 13px; margin: 0; }
 
     .footer-bottom .dev-credit a {
       color: rgba(14,165,233,0.85);
@@ -361,25 +318,12 @@
       transition: color 0.25s;
     }
 
-    .footer-bottom .dev-credit a:hover {
-      color: #38BDF8;
-      text-decoration: underline;
-    }
+    .footer-bottom .dev-credit a:hover { color: #38BDF8; text-decoration: underline; }
 
-    /* RESPONSIVO */
     @media (max-width: 900px) {
-      .sobre-aulas {
-        flex-direction: column;
-        padding: 60px 24px;
-        gap: 40px;
-      }
-      .foto-placeholder-lg {
-        width: 100%;
-        height: 260px;
-      }
-      .galeria-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .sobre-aulas { flex-direction: column; padding: 60px 24px; gap: 40px; }
+      .foto-lateral { width: 100%; height: 260px; }
+      .galeria-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 768px) {
@@ -392,12 +336,12 @@
       .galeria-grid { grid-template-columns: 1fr; }
       .cta-final { padding: 60px 24px; }
       .cta-final h2 { font-size: 26px; }
+      .foto-lateral { width: 100%; height: 220px; }
     }
   </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="logo">
     <img src="logotipo.png" alt="Logo Luis da Robótica">
@@ -408,10 +352,10 @@
     <a href="capacitacao.html">Capacitações</a>
     <a href="mentes.html">Professores</a>
     <a href="contato.html">Contato</a>
+  </nav>
   <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
 </header>
 
-<!-- HERO -->
 <section class="aluno-hero">
   <span class="tag">Arduino Maker</span>
   <h1>Aulas de Robótica para <span>Alunos</span></h1>
@@ -424,65 +368,32 @@
   </a>
 </section>
 
-<!-- SOBRE AS AULAS -->
 <section class="sobre-aulas">
   <div class="sobre-aulas-texto">
     <span class="section-label">Como funciona</span>
     <h2>Aprendizado que acontece <span>na prática</span></h2>
-    <p>
-      Aqui o aprendizado acontece na prática. Em cada aula, os alunos desenvolvem projetos com Arduino e materiais makers, explorando tecnologia de forma criativa, acessível e envolvente.
-    </p>
-    <p>
-      Mais do que montar robôs, eles aprendem a pensar, testar, resolver problemas e transformar ideias em projetos reais. As aulas são estruturadas com desafios dinâmicos que estimulam o raciocínio, a autonomia e o protagonismo dos alunos.
-    </p>
-    <p>
-      Utilizando o <strong style="color: #7DD3F5;">Método dos 3E's</strong> (Explorar, Executar e Evoluir), os alunos passam por um processo contínuo de aprendizagem, onde cada projeto contribui para o desenvolvimento de habilidades essenciais para o futuro.
-    </p>
+    <p>Aqui o aprendizado acontece na prática. Em cada aula, os alunos desenvolvem projetos com Arduino e materiais makers, explorando tecnologia de forma criativa, acessível e envolvente.</p>
+    <p>Mais do que montar robôs, eles aprendem a pensar, testar, resolver problemas e transformar ideias em projetos reais. As aulas são estruturadas com desafios dinâmicos que estimulam o raciocínio, a autonomia e o protagonismo dos alunos.</p>
+    <p>Utilizando o <strong style="color: #7DD3F5;">Método dos 3E's</strong> (Explorar, Executar e Evoluir), os alunos passam por um processo contínuo de aprendizagem, onde cada projeto contribui para o desenvolvimento de habilidades essenciais para o futuro.</p>
   </div>
-
-  <!-- Substitua por <img src="foto-aula.jpg" ...> quando tiver a foto -->
-  <div class="foto-placeholder-lg">
-    <img src="aluno2.PNG" alt="Alunos" class="foto-placeholder-lg">
-    </div>
-    
-  </div>
+  <img src="aluno2.PNG" alt="Alunos em aula de robótica" class="foto-lateral">
 </section>
 
-<!-- INFORMAÇÕES IMPORTANTES -->
 <section class="info-section">
   <span class="section-label">Detalhes</span>
   <h2>Informações <span>importantes</span></h2>
-
   <div class="info-grid">
-    <div class="info-item">
-      <span class="info-emoji">📌</span>
-      <p>Aulas presenciais em <strong>Canoas/RS</strong></p>
-    </div>
-    <div class="info-item">
-      <span class="info-emoji">📅</span>
-      <p><strong>45 aulas</strong> ao longo de 1 ano</p>
-    </div>
-    <div class="info-item">
-      <span class="info-emoji">⏱</span>
-      <p>1 encontro por semana com <strong>2h de duração</strong></p>
-    </div>
-    <div class="info-item">
-      <span class="info-emoji">🚫</span>
-      <p><strong>Sem taxa</strong> de matrícula</p>
-    </div>
-    <div class="info-item">
-      <span class="info-emoji">🧰</span>
-      <p><strong>Sem custo</strong> com materiais</p>
-    </div>
-    
+    <div class="info-item"><span class="info-emoji">📌</span><p>Aulas presenciais em <strong>Canoas/RS</strong></p></div>
+    <div class="info-item"><span class="info-emoji">📅</span><p><strong>45 aulas</strong> ao longo de 1 ano</p></div>
+    <div class="info-item"><span class="info-emoji">⏱</span><p>1 encontro por semana com <strong>2h de duração</strong></p></div>
+    <div class="info-item"><span class="info-emoji">🚫</span><p><strong>Sem taxa</strong> de matrícula</p></div>
+    <div class="info-item"><span class="info-emoji">🧰</span><p><strong>Sem custo</strong> com materiais</p></div>
   </div>
 </section>
 
-<!-- BENEFÍCIOS -->
 <section class="beneficios-section">
   <span class="section-label">O que seu filho vai desenvolver</span>
   <h2>Muito mais do que <span>tecnologia</span></h2>
-
   <div class="beneficios-grid">
     <div class="beneficio-item"><i class="fas fa-tools"></i><p>Cada aula é um novo projeto prático</p></div>
     <div class="beneficio-item"><i class="fas fa-microchip"></i><p>Uso de Arduino e cultura maker</p></div>
@@ -492,53 +403,31 @@
     <div class="beneficio-item"><i class="fas fa-users"></i><p>Ambiente colaborativo e motivador</p></div>
     <div class="beneficio-item"><i class="fas fa-certificate"></i><p>Certificado ao final do curso</p></div>
   </div>
-  
 </section>
 
-<!-- GALERIA -->
 <section class="galeria-section">
   <span class="section-label">Nossas aulas</span>
   <h2>Conheça mais sobre <span>nossas aulas</span></h2>
- 
-    
-
   <div class="galeria-grid">
-    <div class="galeria-item">
-      <!-- <img src="aula1.jpg" alt=""> -->
-      <div class="galeria-placeholder"><img src="A7.jpg" alt=""></div>
-    </div>
-    <div class="galeria-item">
-      <div class="galeria-placeholder"><img src="A2.JPG" alt=""></div>
-    </div>
-    <div class="galeria-item">
-      <div class="galeria-placeholder"><img src="A8.jpeg" alt=""></div>
-    </div>
-    <div class="galeria-item">
-      <div class="galeria-placeholder"><img src="A4.jpeg" alt=""></div>
-    </div>
-    <div class="galeria-item">
-      <div class="galeria-placeholder"><img src="A5.jpeg" alt=""></div>
-    </div>
-    <div class="galeria-item">
-      <div class="galeria-placeholder"><img src="A6.jpeg" alt=""></div>
-    </div>
+    <div class="galeria-item"><img src="A7.jpg" alt="Aula de robótica"></div>
+    <div class="galeria-item"><img src="A2.JPG" alt="Aula de robótica"></div>
+    <div class="galeria-item"><img src="A8.jpeg" alt="Aula de robótica"></div>
+    <div class="galeria-item"><img src="A4.jpeg" alt="Aula de robótica"></div>
+    <div class="galeria-item"><img src="A5.jpeg" alt="Aula de robótica"></div>
+    <div class="galeria-item"><img src="A6.jpeg" alt="Aula de robótica"></div>
   </div>
 </section>
 
-<!-- CTA FINAL -->
 <section class="cta-final">
   <span class="tag">Garanta a vaga</span>
   <h2>Uma experiência que vai além <span>da tecnologia</span></h2>
-  <p>
-    Formando alunos mais criativos, confiantes e preparados para resolver problemas no mundo real. As vagas são limitadas — garante a do seu filho!
-  </p>
+  <p>Formando alunos mais criativos, confiantes e preparados para resolver problemas no mundo real. As vagas são limitadas — garante a do seu filho!</p>
   <a href="contato.html" class="btn-matricula">
     <i class="fas fa-user-plus"></i>
     Quero matricular meu filho(a)
   </a>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-bottom">
     <p>© 2025 Luis da Robótica. Todos os direitos reservados.</p>
