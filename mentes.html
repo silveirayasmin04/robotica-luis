@@ -115,15 +115,14 @@
     }
 
     /* FOTO LATERAL — classe dedicada sem conflito */
-    .foto-lateral {
-      flex-shrink: 0;
-      width: 420px;
-      height: 550px;
-      object-fit: cover;
-      border-radius: 16px;
-      border: 2px solid rgba(14,165,233,0.25);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-    }
+   .foto-lateral {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 16px;
+  border: 2px solid rgba(14,165,233,0.25);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
 
     .beneficios-section {
       background: #000000;
@@ -233,7 +232,7 @@
     /* RESPONSIVO */
     @media (max-width: 900px) {
       .sobre-curso { flex-direction: column; padding: 60px 24px; gap: 40px; }
-      .foto-lateral { width: 100%; height: 320px; }
+      .foto-lateral { width: 100%; height:auto; }
     }
 
     @media (max-width: 768px) {
