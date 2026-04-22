@@ -374,8 +374,8 @@
     <a href="index.html">Home</a>
     <a href="sobre.html">Sobre Mim</a>
     <a href="capacitacao.html">Capacitações</a>
-    <a href="mentes.html">Mentes Makers</a>
-    <a href="contato.html">Contato</a>
+    <a href="mentes.html">Professores</a>
+    <a href="alunos.html">Matricule seu filho(a)</a>
   </nav>
 
   <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
@@ -412,14 +412,38 @@
     </div>
 
     <div class="form-group">
+        
       <label for="assunto">Assunto</label>
+      
       <select id="assunto" onchange="mostrarOutras()">
+        
         <option value="" disabled selected>Selecione uma opção</option>
         <option value="capacitacao">Capacitação para professores</option>
         <option value="matricula">Desejo matricular o meu filho</option>
         <option value="outras">Outras</option>
       </select>
+<!-- CAMPO IDADE — aparece ao selecionar matrícula -->
+<div id="idade-wrapper" style="display:none; margin-top: 12px;">
+  <label for="idade" style="font-size:13px; font-weight:600; color:rgba(255,255,255,0.75); display:block; margin-bottom:6px;">
+    Idade do filho(a)
+  </label>
+  <select id="idade">
+    <option value="" disabled selected>Selecione a idade</option>
+    <option value="8 anos">8 anos</option>
+    <option value="9 anos">9 anos</option>
+    <option value="10 anos">10 anos</option>
+    <option value="11 anos">11 anos</option>
+    <option value="12 anos">12 anos</option>
+    <option value="13 anos">13 anos</option>
+    <option value="14 anos">14 anos</option>
+    <option value="15 anos">15 anos</option>
+    <option value="16 anos">16 anos</option>
+    <option value="17 anos">17 anos</option>
+    <option value="17+ anos">17+ anos</option>
+  </select>
+</div>
 
+<textarea id="outras-texto" placeholder="Conte mais sobre o que você precisa..."></textarea>
       <textarea id="outras-texto" placeholder="Conte mais sobre o que você precisa..."></textarea>
     </div>
 
@@ -486,44 +510,57 @@
 
 <script src="script.js"></script>
 <script>
-  function mostrarOutras() {
-    const assunto = document.getElementById('assunto').value;
-    const outrasTexto = document.getElementById('outras-texto');
-    outrasTexto.style.display = assunto === 'outras' ? 'block' : 'none';
+function mostrarOutras() {
+  const assunto = document.getElementById('assunto').value;
+  const outrasTexto = document.getElementById('outras-texto');
+  const idadeWrapper = document.getElementById('idade-wrapper');
+
+  outrasTexto.style.display = assunto === 'outras' ? 'block' : 'none';
+  idadeWrapper.style.display = assunto === 'matricula' ? 'block' : 'none';
+}
+
+function enviarWhatsApp() {
+  const nome    = document.getElementById('nome').value.trim();
+  const email   = document.getElementById('email').value.trim();
+  const celular = document.getElementById('celular').value.trim();
+  const assunto = document.getElementById('assunto').value;
+  const outras  = document.getElementById('outras-texto').value.trim();
+  const idade   = document.getElementById('idade') ? document.getElementById('idade').value : '';
+
+  if (!nome || !email || !celular || !assunto) {
+    alert('Por favor, preencha todos os campos antes de enviar.');
+    return;
   }
 
-  function enviarWhatsApp() {
-    const nome    = document.getElementById('nome').value.trim();
-    const email   = document.getElementById('email').value.trim();
-    const celular = document.getElementById('celular').value.trim();
-    const assunto = document.getElementById('assunto').value;
-    const outras  = document.getElementById('outras-texto').value.trim();
-
-    if (!nome || !email || !celular || !assunto) {
-      alert('Por favor, preencha todos os campos antes de enviar.');
-      return;
-    }
-
-    const assuntoTexto = {
-      capacitacao: 'Capacitação para professores',
-      matricula:   'Desejo matricular o meu filho',
-      outras:      'Outras'
-    }[assunto];
-
-    let mensagem =
-      `Olá, Luís! 👋\n\n` +
-      `*Nome:* ${nome}\n` +
-      `*E-mail:* ${email}\n` +
-      `*Celular:* ${celular}\n` +
-      `*Assunto:* ${assuntoTexto}`;
-
-    if (assunto === 'outras' && outras) {
-      mensagem += `\n*Mensagem:* ${outras}`;
-    }
-
-    const url = `https://wa.me/5551991377158?text=${encodeURIComponent(mensagem)}`;
-    window.open(url, '_blank');
+  if (assunto === 'matricula' && !idade) {
+    alert('Por favor, selecione a idade do seu filho(a).');
+    return;
   }
+
+  const assuntoTexto = {
+    capacitacao: 'Capacitação para professores',
+    matricula:   'Desejo matricular o meu filho',
+    outras:      'Outras'
+  }[assunto];
+
+  let mensagem =
+    `Olá, Luís! 👋\n\n` +
+    `*Nome:* ${nome}\n` +
+    `*E-mail:* ${email}\n` +
+    `*Celular:* ${celular}\n` +
+    `*Assunto:* ${assuntoTexto}`;
+
+  if (assunto === 'matricula' && idade) {
+    mensagem += `\n*Idade do filho(a):* ${idade}`;
+  }
+
+  if (assunto === 'outras' && outras) {
+    mensagem += `\n*Mensagem:* ${outras}`;
+  }
+
+  const url = `https://wa.me/5551991377158?text=${encodeURIComponent(mensagem)}`;
+  window.open(url, '_blank');
+}
 </script>
 </body>
 </html>
